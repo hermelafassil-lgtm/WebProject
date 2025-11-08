@@ -1,12 +1,16 @@
+// Handels the http-errors
 var createError = require('http-errors');
 var express = require('express');
+// Helps hendle file paths
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Import route files 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Creates the express app 
 var app = express();
 
 // view engine setup
@@ -40,5 +44,5 @@ app.use(function(err, req, res, next) {
   res.render('error',{title:'Error'});
 });
 
-
+// Exports the app object used
 module.exports = app;

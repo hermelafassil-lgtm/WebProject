@@ -1,24 +1,51 @@
 <%- include('partials/header') %>
 <%- include('partials/main_nav') %>
 
-<h1><%= title %></h1>
-<p>Please fill out the form below to send a message:</p>
+<div class="container mt-4" style="max-width: 600px;">
+  <h1 class="text-center mb-4"><%= title %></h1>
+  <h5 class="text-center">
+    If you would like to get in contact with me, you can do so by filling out the form below!
+  </h5>
 
-<% if (successMessage) { %>
-  <div class="alert alert-success"><%= successMessage %></div>
-<% } %>
+  <% if (successMessage) { %>
+    <div class="alert alert-success text-center">
+      <%= successMessage %>
+    </div>
+  <% } %>
 
-<form method="POST" action="/contactme">
-  <label>Your name</label><br>
-  <input type="text" name="Name" required><br><br>
+  <form id="contactForm" action="/contact" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
 
-  <label>Your email</label><br>
-  <input type="email" name="Email" required><br><br>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
 
-  <label>Your message</label><br>
-  <textarea name="Message" rows="5" required></textarea><br><br>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message:</label>
+      <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+    </div>
 
-  <button type="submit">Send Message</button>
-</form>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+
+  <p id="successMsg" class="text-success text-center mt-3" style="display: none;">
+    ✅ Message sent successfully!
+  </p>
+</div>
 
 <%- include('partials/footer') %>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevents reloading
+    msg.style.display = 'block'; // Shows success text
+    form.reset(); // Clears form fields
+  });
+</script>

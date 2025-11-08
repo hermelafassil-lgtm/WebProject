@@ -1,9 +1,14 @@
+<!-- Includes the header   -->
 <%- include('partials/header') %>
+<!--  Includes the main-nav  -->
 <%- include('partials/main_nav') %>
 
+<!-- Prints message if an error ocurrs  -->
 <h1><%= message %></h1>
+<!-- Displayes the error status   -->
 <h2><%= error.status %></h2>
-
 <pre><%= error.stack %></pre>
+
+<!--  Includes the footer  -->
 <%- include('partials/footer') %>
 

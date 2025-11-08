@@ -1,48 +1,63 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Bootstrapign Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
 
     <a class="navbar-brand" href="/">
+      <!-- Link to image of me in the Asset folder  -->
       <img src="/Asset/images/Assignment2.png.png" alt="Logo" style="height:35px;">
     </a>
+    <!-- Toggler for mobile option -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Colapee section  -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+        <!-- Home link -->
         <li class="nav-item">
           <% if (title == "Home") { %>
           <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-lg fa-house"></i> Home</a>
           <% } else { %>
+          <!-- In side a else statment if the user is no on the home page so its not active -->
           <a class="nav-link" aria-current="page" href="/"><i class="fa-solid fa-lg fa-house"></i> Home</a>
           <% } %>
         </li>
 
+      <!-- About link -->
       <li class="nav-item">
         <% if (title == "About") { %>
         <a class="nav-link active " aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
         <% } else { %>
+        <!-- In side a else statment if the user is no on the About page so its not active -->
         <a class="nav-link " aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
         <% } %>
       </li>
       
+      <!-- Projects link -->
       <li class="nav-item">
-        <% if(title == "Services") { %>
-        <a class="nav-link active " aria-current="page" href="/services"> <i class="fa-solid fa-gear"></i> Services</a>
+        <% if (title == "Projects") { %>
+        <a class="nav-link active " aria-current="page" href="/projects"><i class="fa-solid fa-lg fa-circle-info"></i> Projects</a>
         <% } else { %>
-        <a class="nav-link" aria-current="page" href="/services"> <i class="fa-solid fa-gear"></i> Services</a>
-        <% } %> 
+        <!-- In side a else statment if the user is no on the projects page so its not active -->
+        <a class="nav-link " aria-current="page" href="/projects"><i class="fa-solid fa-lg fa-circle-info"></i> Projects</a>
+        <% } %>
       </li>
 
 
+      <!-- Contact Me-->
       <li class="nav-item">
         <% if(title == "Contact Me") { %>
         <a class="nav-link active" aria-current="page" href="/contactme"> <i class="fa-solid fa-phone"></i> Contact Me</a>
         <% }else { %>
+        <!-- In side a else statment if the user is no on the contactme page so its not active -->
         <a class="nav-link" aria-current="page" href="/contactme"> <i class="fa-solid fa-phone"></i> Contact Me</a>
         <% } %>
       </li>
 
+        <!-- Closing Div tag -->
+      </div>
+  <!-- Closing Div tag -->
     </div>
-  </div>
-</nav>
+  <!-- Closing nav tag -->
+  </nav>
